@@ -1,0 +1,14 @@
+{
+  "Nodes": [
+    {
+      "AuthInfo": "",
+      "Name": "testnet",
+      "Url": ""
+    },
+    {
+      "AuthInfo": "wikichain:admin",
+      "Name": "testnet",
+      "Url": "http://192.168.0.23:6968"
+    }
+  ]
+}

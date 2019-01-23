@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,9 @@ using WalletServiceApi.Models;
 
 namespace WalletServiceApi.Controllers.JsonRpcService
 {
+    /// <summary>
+    /// JsonRpc - Mining
+    /// </summary>
     [ApiController]
     public class MiningController : JsonRpcService
     {
@@ -19,6 +23,8 @@ namespace WalletServiceApi.Controllers.JsonRpcService
         /// <summary>
         /// 获取挖矿相关的信息
         /// </summary>
+        /// <remarks>
+        /// </remarks>
         /// <param name="Node">节点名称, 如: test</param>
         /// <returns></returns>
         [HttpGet("{Node}/GetMiningInfo")]

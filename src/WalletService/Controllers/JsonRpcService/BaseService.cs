@@ -50,6 +50,15 @@ namespace WalletServiceApi.Controllers.JsonRpcService
                         data = model.result
                     };
                 }
+                else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    return new BaseRsp<T>()
+                    {
+                        success = false,
+                        error = 400,
+                        msg = "用户鉴权失败",
+                    };
+                }
                 else
                 {
                     return new BaseRsp<T>()

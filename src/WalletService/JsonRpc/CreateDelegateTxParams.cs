@@ -15,7 +15,7 @@ namespace WalletServiceApi.JsonRpc
         /// 投票信息
         /// </summary>
         [Required]
-        public Opervoter Opervotes { get; set; }
+        public Opervoter[] Opervotes { get; set; }
 
         /// <summary>
         /// 手续费

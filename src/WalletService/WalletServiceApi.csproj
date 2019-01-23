@@ -7,20 +7,25 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>M:\VS_Project\WalletService\WalletService\WalletService.xml</DocumentationFile>
+    <DocumentationFile>G:\Repos\WaykiChain.WalletServiceApi.git\src\WalletService\WalletServiceApi.xml</DocumentationFile>
     <NoWarn>1701;1702;1705;1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\JsonRpcController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Config\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.2105168" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.1" />
-    <PackageReference Include="NBitcoin" Version="4.1.1.75" />
+    <PackageReference Include="NBitcoin" Version="4.1.1.78" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-beta" />
     <PackageReference Include="Swashbuckle.SwaggerUi.Master" Version="6.0.0-T2016120822" />
   </ItemGroup>

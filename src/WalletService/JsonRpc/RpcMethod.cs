@@ -2,17 +2,17 @@
 {
     public enum RpcMethod
     {
-        SubmitTx,
-
-        //DumpWallet,
-
         /* Overall control/query calls */
 
         GetInfo,
 
-        //gencheckpoint,
+        //Help,
 
-        //setcheckpoint,
+        //Stop,
+
+        GenCheckPoint,
+
+        SetCheckPoint,
 
         ValidateAddress,
 
@@ -25,7 +25,7 @@
 
         AddNode,
 
-        //GetAddedNodeInfo,
+        GetAddedNodeInfo,
 
         GetConnectionCount,
 
@@ -35,7 +35,8 @@
 
         Ping,
 
-        GetCoinState,
+        GetChainState,
+
 
 
         /* Block chain and UTXO */
@@ -52,7 +53,7 @@
 
         GetDifficulty,
 
-        //getrawmempool,
+        GetRawMemPool,
 
         ListCheckPoint,
 
@@ -73,6 +74,11 @@
 
         SubmitBlock,
 
+
+
+
+        /* Raw transactions */
+
         SendToAddressRaw,
 
         RegistAccountTxRaw,
@@ -82,13 +88,16 @@
         RegisterScriptTxRaw,
 
 
+
+
+
         /* uses wallet if enabled */
 
         BackupWallet,
 
         DumpPrivkey,
 
-        //DumpWallet,
+        DumpWallet,
 
         EncryptWallet,
 
@@ -106,7 +115,7 @@
 
         DropPrivkey,
 
-        //ImportWallet,
+        ImportWallet,
 
         ListAddr,
 
@@ -130,6 +139,92 @@
 
         CreateDelegateTxRaw,
 
-        RegisterAppTx
+        RegisterAppTx,
+
+        SetTxFee,
+
+        WalletLock,
+
+        WalletPassphraseChange,
+
+        WalletPassphrase,
+
+        SetGenerate,
+
+        ListApp,
+
+        GetAppInfo,
+
+        GenerateBlock,
+
+        ListTxCache,
+
+        GetAppData,
+
+        GetAppDataRaw,
+
+        GetAppConfirmData,
+
+        SignMessage,
+
+        SendToAddress,
+
+        SendToAddressWithFee,
+
+        GetBalance,
+
+        //notionalpoolingbalance
+
+        //dispersebalance
+
+        //notionalpoolingasset
+
+        GetAssets,
+
+        ListAsset,
+
+        SubmitTx,
+
+        SigStr,
+
+        GetAppAccountInfo,
+
+        GetAppKeyValue,
+
+        IsLocked,
+
+        GetSignature,
+
+        GetDelegateList,
+
+        DecodeRawTransaction,
+
+
+
+        /* beta function */
+
+        GetTxOperationLog,
+
+        DisconnectBlock,
+
+        ResetClient,
+
+        ReloadTxCache,
+
+        ListSetBlockIndexValid,
+
+        GetAppRegId,
+
+        GetScriptDbSize,
+
+        PrintBlokDbInfo,
+
+        GetAllTxInfo,
+
+        SaveBlockToFile,
+
+        GetHash,
+
+        GetRawTx
     }
 }
