@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Models;
 
 namespace WalletServiceApi
 {
@@ -28,11 +27,11 @@ namespace WalletServiceApi
             {
                 //options.Filters.Add<ErrorActionFilter>();
 
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo()
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info()
                 {
                     Version = "v1",
                     Title = "WalletService API",
