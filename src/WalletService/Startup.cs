@@ -55,7 +55,7 @@ namespace WalletServiceApi
             {
                 if (!string.IsNullOrEmpty(node.Url))
                 {
-                    services.AddHttpClient(node.Name, c =>
+                    services.AddHttpClient(node.Name.ToLower(), c =>
                     {
                         c.BaseAddress = new Uri(node.Url);
                         c.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes(node.AuthInfo)));

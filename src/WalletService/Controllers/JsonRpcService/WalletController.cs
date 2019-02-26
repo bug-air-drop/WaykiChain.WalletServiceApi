@@ -12,7 +12,7 @@ using WalletServiceApi.Models;
 namespace WalletServiceApi.Controllers.JsonRpcService
 {
     [ApiController]
-    public class WalletController : JsonRpcService
+    public class WalletController : BaseService
     {
         public WalletController(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
         {

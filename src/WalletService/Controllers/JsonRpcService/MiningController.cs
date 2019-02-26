@@ -13,7 +13,7 @@ namespace WalletServiceApi.Controllers.JsonRpcService
     /// JsonRpc - Mining
     /// </summary>
     [ApiController]
-    public class MiningController : JsonRpcService
+    public class MiningController : BaseService
     {
         public MiningController(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
         {

@@ -1,3 +1,4 @@
+RUN dotnet publish -o publish
 
 FROM microsoft/dotnet:2.2-aspnetcore-runtime
 
