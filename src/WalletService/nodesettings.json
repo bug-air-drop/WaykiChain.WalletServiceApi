@@ -3,7 +3,22 @@
     {
       "AuthInfo": "wikichain:admin",
       "Name": "testnet",
-      "Url": "http://192.168.0.23:6968"
+      "Url": "http://testnet.wic.me"
+    },
+    {
+      "AuthInfo": "wikichain:admin",
+      "Name": "test",
+      "Url": "http://testnet.wic.me"
+    },
+    {
+      "AuthInfo": "wikichain:admin",
+      "Name": "mainnet",
+      "Url": "http://mainnet.wic.me"
+    },
+    {
+      "AuthInfo": "wikichain:admin",
+      "Name": "main",
+      "Url": "http://mainnet.wic.me"
     }
   ]
 }

@@ -2,9 +2,9 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WalletServiceApi.Controllers.JsonRpcService;
 using WalletServiceApi.JsonRpc;
 using WalletServiceApi.Models;
+using SubmitTxReq = WalletServiceApi.Models.SubmitTxReq;
 
 namespace WalletServiceApi.Controllers
 {
@@ -13,7 +13,7 @@ namespace WalletServiceApi.Controllers
     /// </summary>
     [Route("[controller]")]
     [ApiController]
-    public class CommonController : BaseService
+    public class CommonController : JsonRpcService.BaseService
     {
         public CommonController(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
         {
@@ -26,9 +26,9 @@ namespace WalletServiceApi.Controllers
         /// <param name="data">交易数据</param>
         /// <returns>处理结果</returns>
         [HttpPost("SubmitTx")]
-        public async Task<BaseRsp<dynamic>> SubmitTx(Models.SubmitTxReq data)
+        public async Task<BaseRsp<dynamic>> SubmitTx(SubmitTxReq data)
         {
-            return await CallRpc<dynamic>(data.Node, new BaseRpc() { method = RpcMethod.SubmitTx.ToString().ToLower(), _params = new object[] { data.TxRaw } });
+            return await CallRpc<dynamic>(data.Node, new BaseRpc() { method = RpcMethod.GetBlockCount.ToString().ToLower() });
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace WalletServiceApi.Controllers
         [HttpPost("GetBlockCount")]
         public async Task<BaseRsp<dynamic>> GetBlockCount(NodeInfo node)
         {
-            return await CallRpc<dynamic>(node, new BaseRpc() { method = RpcMethod.GetBlockCount.ToString().ToLower(), _params = new object[] { } });
+            return await CallRpc<dynamic>(node, new BaseRpc() { method = RpcMethod.GetBlockCount.ToString().ToLower() });
         }
     }
 }
