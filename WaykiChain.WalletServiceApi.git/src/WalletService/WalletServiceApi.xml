@@ -1,0 +1,2004 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WalletServiceApi</name>
+    </assembly>
+    <members>
+        <member name="T:WalletServiceApi.Controllers.CommonController">
+            <summary>
+            其他接口
+            </summary>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.CommonController.SubmitTx(WalletServiceApi.Models.SubmitTxReq)">
+            <summary>
+            提交已签名交易
+            </summary>
+            <param name="data">交易数据</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.CommonController.GetBlockCount(WalletServiceApi.Models.NodeInfo)">
+            <summary>
+            获取指定节点上的区块高度
+            </summary>
+            <param name="node">节点信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.GetTxOperationLog(System.String,System.String)">
+            <summary>
+            获取交易产生的日志
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Hash">交易Hash</param>
+            <returns>日志列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.DisconnectBlock(System.String,System.Int32)">
+            <summary>
+            DisconnectBlock
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Block">the block numbers</param>
+            <returns>日志列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.ResetClient(System.String)">
+            <summary>
+            ResetClient
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.ReloadTxCache(System.String)">
+            <summary>
+            重新加载缓存中的交易
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.ListSetBlockIndexValid(System.String)">
+            <summary>
+            ListSetBlockIndexValid
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.GetAppRegId(System.String,System.String)">
+            <summary>
+            获取应用的RegId
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Address">应用的地址</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.GetScriptDbSize(System.String,System.String)">
+            <summary>
+            获取应用已使用的存储空间
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用RegId</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.PrintBlokDbInfo(System.String)">
+            <summary>
+            获取区块数据库的信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.GetAllTxInfo(System.String)">
+            <summary>
+            获取已确认和未确认的交易列表
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.SaveBlockToFile(System.String,WalletServiceApi.JsonRpc.SaveBlockToFileParams)">
+            <summary>
+            将指定区块保存到本地文件
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.GetHash(System.String,System.String)">
+            <summary>
+            获取字符串的哈希
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="content">字符串</param>
+            <returns>哈希</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BetaFunController.GetRawTx(System.String,System.String)">
+            <summary>
+            GetRawTx
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="content">Raw</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetBlockChainInfo(System.String)">
+            <summary>
+            获取区块链的当前状态
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>描述区块链当前状态的对象</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetBestBlockHash(System.String)">
+            <summary>
+            获取节点上最优链上最后一个区块的哈希
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>最高位的区块哈希</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetBlockCount(System.String)">
+            <summary>
+            获取本地最优链中的区块数量
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>一个整数值，表示本地最优链中的区块数量</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetBlock(System.String,System.String)">
+            <summary>
+            获取指定哈希的区块信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="HashOrHeight">区块哈希或高度</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetBlock(System.String,System.String,System.Boolean)">
+            <summary>
+            获取指定哈希的区块，根据参数不同，返回结果可以是序列化码流 或者JSON对象
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="HashOrHeight">区块哈希或高度</param>
+            <param name="Format">是否解析为Json格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetBlockHash(System.String,System.UInt32)">
+            <summary>
+            获取在本地最优链中指定高度区块的哈希
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Height">区块在链中的高度</param>
+            <returns>指定高度区块的块头哈希值</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetDifficulty(System.String)">
+            <summary>
+            获取当前记账计算量难度
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetRawMemPool(System.String,System.Boolean)">
+            <summary>
+            获取内存池信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Verbose">true 返回Json格式, flase 返回交易ID列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.ListCheckPoint(System.String)">
+            <summary>
+            获取区块检查点
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.VerifyChain(System.String,WalletServiceApi.JsonRpc.VerifyChainParams)">
+            <summary>
+            验证本地区块链数据库中的每个成员
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">检查范围</param>
+            <returns>返回验证结果，true或false</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.VerifyMessage(System.String,WalletServiceApi.JsonRpc.VerifyMessageParams)">
+            <summary>
+            验证一个签名消息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">检查范围</param>
+            <returns>验证成功时返回true，否则返回false或者错误信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetTotalCoin(System.String)">
+            <summary>
+            获取全网的币的总和
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.BlockController.GetTotalAssets(System.String,System.String)">
+            <summary>
+            获取由指定应用发行的资产总和
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="ScriptId">应用RegId</param>
+            <returns></returns>
+        </member>
+        <member name="T:WalletServiceApi.Controllers.JsonRpcService.MiningController">
+            <summary>
+            JsonRpc - Mining
+            </summary>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.MiningController.GetMiningInfo(System.String)">
+            <summary>
+            获取挖矿相关的信息
+            </summary>
+            <remarks>
+            </remarks>
+            <param name="Node">节点名称, 如: test</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.MiningController.GetNetworkHashPS(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取基于最近n个区块估算的全网每秒可生成的哈希数量
+            </summary>
+            <param name="Node">节点名称, 如: test</param>
+            <param name="Blocks">用于估算的区块数量，默认值：120，设置为-1则使用自上次 难度变化之后的所有区块进行估算</param>
+            <param name="Height">用于计算平均值的最后一个区块高度。默认值：-1，表示使用 最高位区块</param>
+            <returns>估算的哈希生成速率</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.MiningController.SubmitBlock(System.String,WalletServiceApi.JsonRpc.SubmitBlockParams)">
+            <summary>
+            提交一个区块，进行验证，然后广播到网络中
+            </summary>
+            <param name="Node">节点名称, 如: test</param>
+            <param name="params">参数</param>
+            <returns>成功时返回null，否则返回错误信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.P2PController.GetNetworkInfo(System.String)">
+            <summary>
+            获取节点网络信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.P2PController.AddNode(System.String,System.String,System.String)">
+            <summary>
+            添加P2P连接点
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="IpEndPoint">IP地址与端口, 如:192.168.0.1:6968</param>
+            <param name="Action">add|remove|onetry 方式之一</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.P2PController.AddNode(System.String,System.Boolean,System.String)">
+            <summary>
+            获取所有的节点信息。本方法返回所有的节点信息，其中即有已连接的，也有未连接的地址
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Dns">true时返回全部连接信息, false时只返回添加的节点</param>
+            <param name="LimitNode">可选, 只返回指定节点</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.P2PController.GetConnectionCount(System.String)">
+            <summary>
+            获取当前连接数
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.P2PController.GetNetTotals(System.String)">
+            <summary>
+            获取网络统计信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.P2PController.GetPeerInfo(System.String)">
+            <summary>
+            获取当前连接信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.P2PController.Ping(System.String)">
+            <summary>
+            请求节点测试与已连接节点间的网络延时
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>无返回信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.P2PController.GetChainState(System.String,System.Int32)">
+            <summary>
+            获取指定数量的最新块的基础信息
+            </summary>
+            <param name="Count">数量</param>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.RawController.SendToAddressRaw(System.String,WalletServiceApi.JsonRpc.SendToAddressRawParams)">
+            <summary>
+            获取转账交易的RAW
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>成功时返回RAW，否则返回错误信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.RawController.RegistAccountTxRaw(System.String,WalletServiceApi.JsonRpc.RegistAccountTxRawParams)">
+            <summary>
+            获取激活地址交易的RAW
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>成功时返回RAW，否则返回错误信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.RawController.CreateContracTxRaw(System.String,WalletServiceApi.JsonRpc.CreateContracTxRawParams)">
+            <summary>
+            获取调用合约APP的交易RAW
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>成功时返回RAW，否则返回错误信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.RawController.RegisterScriptTxRaw(System.String,WalletServiceApi.JsonRpc.RegisterScriptTxRawParams)">
+            <summary>
+            获取发布合约APP的交易RAW
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>成功时返回RAW，否则返回错误信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.RawController.CreateDelegateTxRaw(System.String,WalletServiceApi.JsonRpc.CreateDelegateTxParams)">
+            <summary>
+            创建投票交易
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回该交易RAW</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetInfo(System.String)">
+            <summary>
+            获取节点基础信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GenCheckPoint(System.String,WalletServiceApi.JsonRpc.GenCheckPointParams)">
+            <summary>
+            生成CheckPoint
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.SetCheckPoint(System.String,WalletServiceApi.JsonRpc.SetCheckPointParams)">
+            <summary>
+            设置CheckPoint
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ValidateAddress(System.String,System.String)">
+            <summary>
+            获取指定地址的相关信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Address">地址</param>
+            <returns>关于指定地址的信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetTxHashByAddress(System.String,System.String,System.UInt32)">
+            <summary>
+            GetTxHashByAddress
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Address">地址</param>
+            <param name="Height">高度</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.BackupWallet(System.String,WalletServiceApi.JsonRpc.BackupWalletParams)">
+            <summary>
+            将钱包文件wallet.data安全地拷贝到指定文件或目录。 该调用需要节点启用钱包支持
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>成功时backupwallet调用返回null，否则返回一个错误对象</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.DumpPrivkey(System.String,System.String)">
+            <summary>
+            导出指定地址对应的私钥，格式为WIF。该调用需要 节点启用钱包支持，而且钱包解锁或未加密
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Address">一个钱包内的P2PKH地址</param>
+            <returns>指定地址对应的WIF格式的私钥</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.DumpWallet(System.String,WalletServiceApi.JsonRpc.DumpWalletParams)">
+            <summary>
+            将钱包里的所有密钥导出到指定的文件。该调用 需要节点启用钱包，并且钱包解锁或未加密。
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>成功时，dumpwallet调用返回null，否则返回一个错误对象。</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.EncryptWallet(System.String,WalletServiceApi.JsonRpc.EncryptWalletParams)">
+            <summary>
+            将指定的密文加密钱包。该操作只需调用一次，一旦启用加密， 每次需要使用钱包中的密钥时，就需要输入密文。
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回一个提醒信息，提示钱包已加密、节点重启。</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAccountInfo(System.String,System.String)">
+            <summary>
+            获取指定地址的相关信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Address">地址</param>
+            <returns>关于指定地址的信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetNewAddress(System.String,System.Boolean)">
+            <summary>
+            获取一个用于接收支付的新的比特币地址，如果调用时指定了 账户，那么该地址接收到的支付将计入该账户
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="IsMiner">是否为旷工地址</param>
+            <returns>一个新的地址</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetTxDetail(System.String,System.String)">
+            <summary>
+            获取指定交易的详情
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Hash">交易哈希</param>
+            <returns>交易详情</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ListUnconfirmedTx(System.String)">
+            <summary>
+            列出当前未确认的交易
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>交易哈希列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetWalletInfo(System.String)">
+            <summary>
+            获取钱包节点的信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>钱包节点的信息</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ImportPrivkey(System.String,WalletServiceApi.JsonRpc.ImportPrivkeyParams)">
+            <summary>
+            将指定的私钥导入钱包，要导入的私钥应当采用WIF格式， 例如可以使用dumpprivkey调用获得。
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="content">要导入的私钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.DropPrivkey(System.String)">
+            <summary>
+            ClearAllCkeyForCoolMiner
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ImportWallet(System.String,WalletServiceApi.JsonRpc.ImportWalletParams)">
+            <summary>
+            导入钱包转储文件（通过DumpWallet调用获得）。 该文件中的私钥将添加到节点钱包中。由于加入了新的私钥，该调用可能需要重新扫描区块链。
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>成功时，调用返回null，否则返回一个错误对象。</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ListAddr(System.String)">
+            <summary>
+            获取节点上的地址列表
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns></returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ListTransactions(System.String,WalletServiceApi.JsonRpc.ListTransactionsParams)">
+            <summary>
+            获取最近发生的与钱包有关的交易清单。该调用需要节点启用钱包功能。
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回指定数量的交易数组</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ListTx(System.String,WalletServiceApi.JsonRpc.ListTxParams)">
+            <summary>
+            获取最近发生的与钱包有关的所有交易[哈希]清单, 包含未确认交易, 调用需要节点启用钱包功能。
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回指定数量的交易数组</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ListContractTx(System.String,WalletServiceApi.JsonRpc.ListContractTxParams)">
+            <summary>
+            获取最近发生的与钱包有关的合约交易[哈希]清单。该调用需要节点启用钱包功能。
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回指定数量的交易数组</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetTransaction(System.String,System.String)">
+            <summary>
+            获取指定交易的详情
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Hash">交易哈希</param>
+            <returns>交易详情</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.RegistAccountTx(System.String,WalletServiceApi.JsonRpc.RegistAccountTxParams)">
+            <summary>
+            创建激活交易, 并提交到链上
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回该交易的哈希</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.RegisterAccountTx(System.String,WalletServiceApi.JsonRpc.RegistAccountTxParams)">
+            <summary>
+            创建激活交易, 并提交到链上
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回该交易的哈希</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.CreateContractTx(System.String,WalletServiceApi.JsonRpc.CreateContractTxParams)">
+            <summary>
+            创建调用合约交易, 并提交到链上
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回该交易的哈希</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.CreateDelegateTx(System.String,WalletServiceApi.JsonRpc.CreateDelegateTxParams)">
+            <summary>
+            创建投票交易, 并提交到链上
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回该交易的哈希</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.RegisterAppTx(System.String,WalletServiceApi.JsonRpc.RegisterAppTxParams)">
+            <summary>
+            创建注册应用交易, 并提交到链上
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回该交易RAW</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.SetTxFee(System.String,WalletServiceApi.JsonRpc.SetTxFeeParams)">
+            <summary>
+            设置交易的手续费用， 以每kB计算
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.WalletLock(System.String)">
+            <summary>
+            从内存中移除钱包加密密钥，锁定钱包。调用此方法后，您需要再次调用walletpassphrase才能调用任何需要解锁钱包的方法
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>交易详情</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.WalletPassphraseChange(System.String,WalletServiceApi.JsonRpc.WalletPassphraseChangeParams)">
+            <summary>
+            修改钱包密码
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回操作结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.WalletPassphrase(System.String,WalletServiceApi.JsonRpc.WalletPassphraseParams)">
+            <summary>
+            解锁钱包
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回该交易RAW</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.SetGenerate(System.String,WalletServiceApi.JsonRpc.SetGenerateParams)">
+            <summary>
+            解锁钱包
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>返回该交易RAW</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ListApp(System.String,System.Boolean)">
+            <summary>
+            列出所有的合约应用
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="ShowDetail">是否列出合约代码[慎重]</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAppInfo(System.String,System.String)">
+            <summary>
+            获取合约应用的信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用ID</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GenerateBlock(System.String,System.String)">
+            <summary>
+            创建具有指定地址的块
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Addr">地址</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ListTxCache(System.String)">
+            <summary>
+            获取缓存中的交易列表
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAppData(System.String,System.String,System.String)">
+            <summary>
+            获取合约应用内部数据
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用的RegId</param>
+            <param name="Key">Key</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAppData(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取合约应用内部数据
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用的RegId</param>
+            <param name="PageSize">PageSize</param>
+            <param name="Index">Index</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAppDataRaw(System.String,System.String,System.String)">
+            <summary>
+            获取智能合约相关原生数据信息(RAW格式)
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用的RegId</param>
+            <param name="Key">Key</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAppDataRaw(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取智能合约相关原生数据信息(RAW格式)
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用的RegId</param>
+            <param name="PageSize">PageSize</param>
+            <param name="Index">Index</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAppConfirmData(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取已确认的合约应用内部数据
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用的RegId</param>
+            <param name="PageSize">PageSize</param>
+            <param name="Index">Index</param>
+            <param name="Count">最小确认数</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.SignMessage(System.String,WalletServiceApi.JsonRpc.SignMessageParams)">
+            <summary>
+            用指定地址签名消息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.SendToAddress(System.String,WalletServiceApi.JsonRpc.SendToAddressParams)">
+            <summary>
+            发起一笔转账交易
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>交易哈希</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.SendToAddressWithFee(System.String,WalletServiceApi.JsonRpc.SendToAddressWithFeeParams)">
+            <summary>
+            发起一笔转账交易, 并指定手续费
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>交易哈希</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetBalance(System.String)">
+            <summary>
+            获取钱包中所有账户的维基币数量，该调用需要节点启用钱包功能。
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>返回以wicc为单位的余额列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetBalance(System.String,System.String,System.Int32)">
+            <summary>
+            获取钱包中指定账户的维基币数量，该调用需要节点启用钱包功能。
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Address">要查看余额的钱包账户，可选，默认值为*，表示全部账户</param>
+            <param name="MinConf">可计入余额所需要的最小确认数，可选，默认值：1</param>
+            <returns>返回以wicc为单位的余额</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAssets(System.String,System.String)">
+            <summary>
+            获取钱包中所有地址指定的APP资产总额
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用的RegId</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.ListAsset(System.String,System.String)">
+            <summary>
+            列出指定APP下的资产
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用的RegId</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.SubmitTx(System.String,System.String)">
+            <summary>
+            提交交易RAW
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="content">交易RAW</param>
+            <returns>提交结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.SigStr(System.String,WalletServiceApi.JsonRpc.SigStrParams)">
+            <summary>
+            对字符串进行签名
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>签名结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAppAccountInfo(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取已确认的合约应用内部数据
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用的RegId</param>
+            <param name="Address">管理员地址???</param>
+            <param name="Count">最小确认数, 默认为1</param>
+            <returns>列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetAppKeyValue(System.String,System.String,System.String)">
+            <summary>
+            获取合约内部KV数据
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="AppId">应用的RegId</param>
+            <param name="Key">Key</param>
+            <returns>Value</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.IsLocked(System.String)">
+            <summary>
+            获取钱包的加密状态
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <returns>0 - 未加密, 1 - 钱包已加密,当前未锁定, 2 - 钱包处于锁定状态</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetSignature(System.String,WalletServiceApi.JsonRpc.GetSignatureParams)">
+            <summary>
+            用私钥对哈希串进行签名
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="params">参数</param>
+            <returns>签名结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.GetDelegateList(System.String,System.Int32)">
+            <summary>
+            获取投票的统计信息
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="Count">名次, 范围:1~11</param>
+            <returns>投票统计列表</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.JsonRpcService.WalletController.DecodeRawTransaction(System.String,System.String)">
+            <summary>
+            解析交易RAW
+            </summary>
+            <param name="Node">节点名称, 如: testnet</param>
+            <param name="content">交易RAW</param>
+            <returns>提交结果</returns>
+        </member>
+        <member name="T:WalletServiceApi.Controllers.SignController">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.SignController.CommonTx(WalletServiceApi.Models.CommonTxReq)">
+            <summary>
+            普通交易签名
+            </summary>
+            <param name="data">请求体</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.SignController.RegisterAccountTx(WalletServiceApi.Models.RegisterAccountTxReq)">
+            <summary>
+            激活地址交易签名
+            </summary>
+            <param name="data">交易参数</param>
+            <returns>签名结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.SignController.RegisterAppTx(WalletServiceApi.Models.RegisterAppTxReq)">
+            <summary>
+            注册应用交易签名
+            </summary>
+            <param name="data">交易参数</param>
+            <returns>签名结果</returns>
+        </member>
+        <member name="M:WalletServiceApi.Controllers.SignController.ContractTx(WalletServiceApi.Models.ContractTxReq)">
+            <summary>
+            调用应用交易签名
+            </summary>
+            <param name="data">交易参数</param>
+            <returns>签名结果</returns>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AccountInfo.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AccountInfo.KeyID">
+            <summary>
+            KeyID
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AccountInfo.RegID">
+            <summary>
+            RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AccountInfo.PublicKey">
+            <summary>
+            公钥
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AccountInfo.MinerPKey">
+            <summary>
+            挖矿公钥
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AccountInfo.Balance">
+            <summary>
+            账号余额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AccountInfo.Votes">
+            <summary>
+            投票
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AccountInfo.UpdateHeight">
+            <summary>
+            更新高度
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.AppInfo">
+            <summary>
+            合约信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AppInfo.scriptId">
+            <summary>
+            合约的RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AppInfo.scriptId2">
+            <summary>
+            合约的ID
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AppInfo.description">
+            <summary>
+            描述信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.AppInfo.scriptContent">
+            <summary>
+            合约代码
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BackupWalletParams.Destination">
+            <summary>
+            备份目录或文件名，如果是文件名，则该文件被覆盖；如果是目录， 那么该目录下将新建或覆盖wallet.data文件
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.BlockInfo">
+            <summary>
+            区块信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.hash">
+            <summary>
+            哈希
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.confirmations">
+            <summary>
+            确认数
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.size">
+            <summary>
+            区块大小
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.height">
+            <summary>
+            区块高度
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.version">
+            <summary>
+            协议版本
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.merkleroot">
+            <summary>
+            Merkle树根哈希
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.txnumber">
+            <summary>
+            包含的交易笔数
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.tx">
+            <summary>
+            包含的交易哈希
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.time">
+            <summary>
+            出块时间
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.nonce">
+            <summary>
+            nonce值
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.chainwork">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.fuel">
+            <summary>
+            燃料
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.fuelrate">
+            <summary>
+            燃料率
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.previousblockhash">
+            <summary>
+            前一个区块哈希
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.BlockInfo.nextblockhash">
+            <summary>
+            后一个区块哈希
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.ChainInfo">
+            <summary>
+            描述区块链当前状态的对象
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ChainInfo.chain">
+            <summary>
+            区块链名称，可以是：main、test或regtest
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ChainInfo.blocks">
+            <summary>
+            本地最优链中的已验证区块数量
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ChainInfo.bestblockhash">
+            <summary>
+            本地最优链中最高区块的哈希
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ChainInfo.verificationprogress">
+            <summary>
+            区块验证进度，0.0~1.0
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ChainInfo.chainwork">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.CoinStateInfo">
+            <summary>
+            区块信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CoinStateInfo.blocktime">
+            <summary>
+            出块时间
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CoinStateInfo.transactions">
+            <summary>
+            交易笔数
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CoinStateInfo.fuel">
+            <summary>
+            燃料消耗
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CoinStateInfo.blockminer">
+            <summary>
+            矿工RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContractTxParams.SenderAddr">
+            <summary>
+            发送方地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContractTxParams.AppRegId">
+            <summary>
+            合约的RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContractTxParams.Amount">
+            <summary>
+            交易转账金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContractTxParams.Contract">
+            <summary>
+            合约内容
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContractTxParams.Fee">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContractTxParams.Height">
+            <summary>
+            可选参数, 高度
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContracTxRawParams.Fee">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContracTxRawParams.Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContracTxRawParams.Addr">
+            <summary>
+            调用方地址, 该地址必须存在于当前钱包节点
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContracTxRawParams.AppId">
+            <summary>
+            合约应用的RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContracTxRawParams.Contract">
+            <summary>
+            提交的合约内容
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateContracTxRawParams.Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateDelegateTxParams.Addr">
+            <summary>
+            投票人地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateDelegateTxParams.Opervotes">
+            <summary>
+            投票信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateDelegateTxParams.Fee">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateDelegateTxParams.Height">
+            <summary>
+            可选参数, 高度
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.CreateDelegateTxParams.Opervoter">
+            <summary>
+            投票信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateDelegateTxParams.Opervoter.Delegate">
+            <summary>
+            候选人地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.CreateDelegateTxParams.Opervoter.Votes">
+            <summary>
+            投票数量
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.DumpWalletParams.FileName">
+            <summary>
+            导出文件名
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.EncryptWalletParams.Passphrase">
+            <summary>
+            用于加密钱包的密文，最短1个字符
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.GenCheckPointParams.PrivateKey">
+            <summary>
+            用于签名的私钥
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.GenCheckPointParams.FilePath">
+            <summary>
+            区块文件路径
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.GetAddedNodeInfoParams.Dns">
+            <summary>
+            true时返回全部连接信息, false时只返回添加的节点
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.GetAddedNodeInfoParams.Node">
+            <summary>
+            可选参数, 指定返回的节点
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.GetBlockHash">
+            <summary>
+            区块哈希
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.GetBlockHash.hash">
+            <summary>
+            哈希值
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.GetSignatureParams.PrivKey">
+            <summary>
+            用于签名的私钥
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.GetSignatureParams.Hash">
+            <summary>
+            需要签名的Hash数据
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ImportPrivkeyParams.PrivateKey">
+            <summary>
+            要导入的私钥
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ImportPrivkeyParams.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ImportPrivkeyParams.Rescan">
+            <summary>
+            是否重新扫描区块链
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ImportWalletParams.FileName">
+            <summary>
+            要导入的钱包转储文件名
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ListContractTxParams.ScriptId">
+            <summary>
+            合约RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ListContractTxParams.Count">
+            <summary>
+            可选参数, 要提取的交易数量，默认值：10
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ListContractTxParams.Skip">
+            <summary>
+            可选参数, 要跳过的交易数量，默认值：0
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ListTransactionsParams.Address">
+            <summary>
+            可选参数, 钱包地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ListTransactionsParams.Count">
+            <summary>
+            可选参数, 要提取的交易数量，默认值：10
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ListTransactionsParams.Skip">
+            <summary>
+            可选参数, 要跳过的交易数量，默认值：0
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ListTxParams.Count">
+            <summary>
+            可选参数, 要提取的交易数量，默认值：10
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.ListTxParams.Skip">
+            <summary>
+            可选参数, 要跳过的交易数量，默认值：0
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.MiningInfo">
+            <summary>
+            挖矿相关的信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.blocks">
+            <summary>
+            本地最高位区块的高度
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.currentblocksize">
+            <summary>
+            当前节点生成的前一个区块的大小
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.currentblocktx">
+            <summary>
+            当前节点生成的前一个区块中的交易数量
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.errors">
+            <summary>
+            当前节点检测到的错误信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.genproclimit">
+            <summary>
+            用于挖矿的cpu核心数量上限，默认值：-1
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.networkhashps">
+            <summary>
+            为维持当前难度，全网每秒需要生成的哈希数量
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.pooledtx">
+            <summary>
+            内存交易池中的交易数量
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.nettype">
+            <summary>
+            当前所连接网络，main、test或regtest
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.posmaxnonce">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.MiningInfo.generate">
+            <summary>
+            如果当前节点启用挖矿，则为true，否则为false
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.NetTotalInfo.totalbytesrecv">
+            <summary>
+            总接收字节数
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.NetTotalInfo.totalbytessent">
+            <summary>
+            总发送字节数
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.NetworkInfo">
+            <summary>
+            当前网络信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegistAccountTxParams.Address">
+            <summary>
+            待激活的地址, 该地址必须存在于当前钱包节点中
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegistAccountTxParams.Fee">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegistAccountTxRawParams.Fee">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegistAccountTxRawParams.Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegistAccountTxRawParams.PublicKey">
+            <summary>
+            待激活地址的公钥
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegistAccountTxRawParams.MinerPublicKey">
+            <summary>
+            可选参数, 待激活地址的旷工公钥
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterAppTxParams.Addr">
+            <summary>
+            注册人地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterAppTxParams.FilePath">
+            <summary>
+            合约脚本文件在节点本地上的路径
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterAppTxParams.Fee">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterAppTxParams.Height">
+            <summary>
+            指示合约的类型, 为0时是本地文件名, 为1时是已发布的合约RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterAppTxParams.ScriptDesc">
+            <summary>
+            合约代码来源, 为0时是本地文件名, 为1时是已发布的合约RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterScriptTxRawParams.Fee">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterScriptTxRawParams.Addr">
+            <summary>
+            合约发起人地址, 该地址必须存在于当前钱包节点
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterScriptTxRawParams.Flag">
+            <summary>
+            指示合约的类型, 为0时是本地文件名, 为1时是已发布的合约RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterScriptTxRawParams.Script">
+            <summary>
+            合约代码来源, 为0时是本地文件名, 为1时是已发布的合约RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterScriptTxRawParams.Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.RegisterScriptTxRawParams.Description">
+            <summary>
+            可选参数, 合约的描述信息
+            </summary>
+        </member>
+        <member name="M:WalletServiceApi.JsonRpc.RpcClient.CallRpc(System.String,System.String,WalletServiceApi.JsonRpc.BaseRpc)">
+            <summary>
+            发起POST异步请求
+            </summary>
+            <param name="url"></param>
+            <param name="postData"></param>
+            <param name="authInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SaveBlockToFileParams.BlockHash">
+            <summary>
+            投票人地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SaveBlockToFileParams.FilePath">
+            <summary>
+            保存的文件路径
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressParams.SendAddress">
+            <summary>
+            发送方地址, 缺省时将自动在钱包中选择余额充足的地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressParams.RecvAddress">
+            <summary>
+            接收方地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressParams.Amount">
+            <summary>
+            转账金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressRawParams.Fee">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressRawParams.Amount">
+            <summary>
+            转账金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressRawParams.SrcAddress">
+            <summary>
+            发送方账户, 该地址必须存在于当前钱包中
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressRawParams.RecvAddress">
+            <summary>
+            接收方地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressRawParams.Height">
+            <summary>
+            可选参数, 高度
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressWithFeeParams.SendAddress">
+            <summary>
+            发送方地址, 缺省时将自动在钱包中选择余额充足的地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressWithFeeParams.RecvAddress">
+            <summary>
+            接收方地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressWithFeeParams.Amount">
+            <summary>
+            转账金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SendToAddressWithFeeParams.Fee">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SetCheckPointParams.FilePath">
+            <summary>
+            区块文件路径
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SetGenerateParams.Generate">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SetGenerateParams.GenerateLimit">
+            <summary>
+            最大线程数
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SetTxFeeParams.Amount">
+            <summary>
+            每KB的费用
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SignMessageParams.Address">
+            <summary>
+            钱包中用于签名的地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SignMessageParams.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SigStrParams.Str">
+            <summary>
+            需要签名的字符串
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SigStrParams.Addr">
+            <summary>
+            用于签名的地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SubmitBlockParams.HexData">
+            <summary>
+            序列化的区块
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SubmitBlockParams.Parameters">
+            <summary>
+            可选的参数对象，该对象不会广播到网络中，但可能会被节点交易池使用
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.SubmitTxReq">
+            <summary>
+            请求提交RAW
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SubmitTxReq.Raw">
+            <summary>
+            交易RAW
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.SubmitTxReq.Node">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.confirmations">
+            <summary>
+            确认数量
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.blockhash">
+            <summary>
+            区块哈希
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.blocktime">
+            <summary>
+            区块时间戳
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.txid">
+            <summary>
+            交易id
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.details">
+            <summary>
+            交易详情
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.hex">
+            <summary>
+            交易RAW
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.Detail.txtype">
+            <summary>
+            交易类型
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.Detail.contract">
+            <summary>
+            合约内容
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.Detail.address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.Detail.category">
+            <summary>
+            交易类型
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionDetailInfo.Detail.amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.address">
+            <summary>
+            接收方地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.desaddr">
+            <summary>
+            接收方地址[V2版本]
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.category">
+            <summary>
+            交易类别
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.confirmations">
+            <summary>
+            确认数量
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.blockhash">
+            <summary>
+            区块哈希
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.blocktime">
+            <summary>
+            区块时间戳
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.txid">
+            <summary>
+            交易id
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.txtype">
+            <summary>
+            交易类型
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.srcaddr">
+            <summary>
+            发送方地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TransactionInfo.contract">
+            <summary>
+            合约内容/交易备注
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.hash">
+            <summary>
+            交易哈希
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.txtype">
+            <summary>
+            交易类型
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.ver">
+            <summary>
+            协议版本
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.regid">
+            <summary>
+            签名方RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.addr">
+            <summary>
+            签名方地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.money">
+            <summary>
+            交易金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.height">
+            <summary>
+            所在区块的高度
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.blockhash">
+            <summary>
+            所在区块的哈希值
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.confirmHeight">
+            <summary>
+            交易确认的高度
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.confirmedtime">
+            <summary>
+            交易确认的时间
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.rawtx">
+            <summary>
+            RAW内容
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.pubkey">
+            <summary>
+            签名方公钥哈希[激活地址时]
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.miner_pubkey">
+            <summary>
+            签名方挖矿公钥的哈希[激活地址时]
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.fees">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.script">
+            <summary>
+            合约描述[注册应用时]
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.desregid">
+            <summary>
+            接收方RegId
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.desaddr">
+            <summary>
+            接收方地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.Contract">
+            <summary>
+            请求合约的内容[调用合约时]
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.TxDetail.listOutput">
+            <summary>
+            合约输出内容[调用合约时]
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.JsonRpc.VerifyChainParams">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.VerifyChainParams.CheckLevel">
+            <summary>
+            指定检查的细致等级，0~4，默认值：3，等级越高 检查越细致
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.VerifyChainParams.NumBlocks">
+            <summary>
+            要检查的区块数量，0表示检查所有区块，默认值：288
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.VerifyMessageParams.CoinAddress">
+            <summary>
+            签名私钥对应的地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.VerifyMessageParams.Signature">
+            <summary>
+            base64编码的签名
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.VerifyMessageParams.Message">
+            <summary>
+            原始消息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.WalletInfo.walletversion">
+            <summary>
+            钱包版本
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.WalletInfo.balance">
+            <summary>
+            总资产
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.WalletInfo.Inblocktx">
+            <summary>
+            已确认交易笔数
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.WalletInfo.unconfirmtx">
+            <summary>
+            未确认交易笔数
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.WalletPassphraseChangeParams.OldPassphrase">
+            <summary>
+            旧钱包密码
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.WalletPassphraseChangeParams.NewPassphrase">
+            <summary>
+            新钱包密码
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.WalletPassphraseParams.Passphrase">
+            <summary>
+            钱包密码
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.JsonRpc.WalletPassphraseParams.Timeout">
+            <summary>
+            持续时间， 超时以后将自动从内存中删除钱包密码， 钱包将再次处于锁定状态
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.Models.BaseRsp`1">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.BaseRsp`1.success">
+            <summary>
+            请求是否成功
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.BaseRsp`1.error">
+            <summary>
+            指示错误的类型
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.BaseRsp`1.msg">
+            <summary>
+            成功或失败的相关描述
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.BaseRsp`1.data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.Models.BaseTxReq">
+            <summary>
+            请求对象基类
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.BaseTxReq.PrivateKey">
+            <summary>
+            私钥
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.BaseTxReq.Submit">
+            <summary>
+            是否直接提交
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.BaseTxReq.NetType">
+            <summary>
+            设置节点类型， 0 测试链 1 主网链
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.BaseTxReq.Node">
+            <summary>
+            指定节点
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.BaseTxReq.ValidHeight">
+            <summary>
+            超时高度
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.Models.CommonTxReq">
+            <summary>
+            普通（转账）交易
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.CommonTxReq.From">
+            <summary>
+            发起地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.CommonTxReq.To">
+            <summary>
+            接收地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.CommonTxReq.Fees">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.CommonTxReq.Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.Models.ContractTxReq">
+            <summary>
+            调用合约交易
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.ContractTxReq.FromRegId">
+            <summary>
+            调用人RegID
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.ContractTxReq.ToScriptId">
+            <summary>
+            合约RegID
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.ContractTxReq.Fees">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.ContractTxReq.Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.ContractTxReq.Contract">
+            <summary>
+            合约内容
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.Models.NodeInfo">
+            <summary>
+            节点信息
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.NodeInfo.Url">
+            <summary>
+            JSON-RPC服务地址
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.NodeInfo.AuthInfo">
+            <summary>
+            鉴权信息
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.Models.RegisterAccountTxReq">
+            <summary>
+            激活账号交易
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.RegisterAccountTxReq.Fees">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.Models.RegisterAppTxReq">
+            <summary>
+            注册APP交易
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.RegisterAppTxReq.FromRegId">
+            <summary>
+            调用人RegID
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.RegisterAppTxReq.Fees">
+            <summary>
+            手续费
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.RegisterAppTxReq.Contract">
+            <summary>
+            APP脚本内容
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.Models.SubmitTxReq">
+            <summary>
+            签名交易
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.SubmitTxReq.Node">
+            <summary>
+            指定节点
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.SubmitTxReq.TxRaw">
+            <summary>
+            交易
+            </summary>
+        </member>
+        <member name="T:WalletServiceApi.Models.TxData">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="P:WalletServiceApi.Models.TxData.Hash">
+            <summary>
+            交易哈希
+            </summary>
+        </member>
+    </members>
+</doc>

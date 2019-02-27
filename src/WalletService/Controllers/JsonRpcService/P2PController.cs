@@ -11,7 +11,7 @@ using WalletServiceApi.Models;
 namespace WalletServiceApi.Controllers.JsonRpcService
 {
     [ApiController]
-    public class P2PController : JsonRpcService
+    public class P2PController : BaseService
     {
         public P2PController(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
         {

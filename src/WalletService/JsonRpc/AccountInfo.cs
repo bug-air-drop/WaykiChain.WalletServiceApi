@@ -25,15 +25,15 @@
         /// <summary>
         /// 账号余额
         /// </summary>
-        public int Balance { get; set; }
+        public long Balance { get; set; }
         /// <summary>
         /// 投票
         /// </summary>
-        public int Votes { get; set; }
+        public long Votes { get; set; }
         /// <summary>
         /// 更新高度
         /// </summary>
-        public int UpdateHeight { get; set; }
+        public long UpdateHeight { get; set; }
         public object[] voteFundList { get; set; }
         public string postion { get; set; }
     }

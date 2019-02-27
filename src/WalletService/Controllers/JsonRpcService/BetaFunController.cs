@@ -12,7 +12,7 @@ namespace WalletServiceApi.Controllers.JsonRpcService
 {
 
     [ApiController]
-    public class BetaFunController : JsonRpcService
+    public class BetaFunController : BaseService
     {
         public BetaFunController(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
         {
