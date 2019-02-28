@@ -1,11 +1,13 @@
 ﻿using System;
+using System.IO;
+using NBitcoin.Protocol;
 
 namespace NBitcoin.Wicc.Core
 {
     public class UserId : IBitcoinSerializable
     {
-        public UInt32 Height;
-        public UInt32 Index;
+        public ulong Height;
+        public ulong Index;
         public KeyId KeyId;
 
         public UserId()
@@ -29,37 +31,39 @@ namespace NBitcoin.Wicc.Core
         {
             if (stream.Serializing)
             {
+                var ms = new MemoryStream();
+                var bs = new BitcoinStream(ms, true) { Type = SerializationType.Hash };
+
                 if (KeyId != null)
                 {
-                    uint fix = 20;
-
-                    stream.ReadWriteAsVarInt(ref fix);
                     stream.ReadWrite(new uint160(KeyId.ToBytes()));
                 }
                 else
                 {
-                    uint fix = 4;
-
-                    stream.ReadWriteAsVarInt(ref fix);
-                    stream.ReadWriteAsCompactVarInt(ref Height);
-                    stream.ReadWriteAsCompactVarInt(ref Index);
+                    bs.ReadWriteAsCompactVarInt(ref Height);
+                    bs.ReadWriteAsCompactVarInt(ref Index);
                 }
+
+                var packBytes = ms.ToArray();
+                stream.ReadWriteAsVarString(ref packBytes);
             }
             else
             {
-                uint fixLenght = 0;
-                stream.ReadWriteAsVarInt(ref fixLenght);
+                var packVar = new VarString();
+                stream.ReadWrite(ref packVar);
 
-                if (fixLenght < 20)
-                {
-                    stream.ReadWriteAsCompactVarInt(ref Height);
-                    stream.ReadWriteAsCompactVarInt(ref Index);
-                }
-                else
+                var bs = new BitcoinStream(packVar.GetString());
+
+                if (packVar.Length >= 20)
                 {
                     var keyHash = uint160.Zero;
                     stream.ReadWrite(ref keyHash);
                     KeyId = new KeyId(keyHash);
+                }
+                else
+                {
+                    bs.ReadWriteAsCompactVarInt(ref Height);
+                    bs.ReadWriteAsCompactVarInt(ref Index);
                 }
             }
         }
