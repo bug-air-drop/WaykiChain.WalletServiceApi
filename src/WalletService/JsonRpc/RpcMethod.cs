@@ -87,7 +87,7 @@
 
         RegisterScriptTxRaw,
 
-
+        DecodeRawTx,
 
 
 
@@ -225,6 +225,18 @@
 
         GetHash,
 
-        GetRawTx
+        GetRawTx,
+
+        /*Contract*/
+
+        GetContractAccountInfo,
+
+        GetContractConfirmData,
+
+        GetContractData,
+
+        GetContractItemCount,
+
+        GetContractKeyValue
     }
 }

@@ -5,10 +5,11 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <UserSecretsId>6f61b062-1001-465e-9788-357f7ec7d62d</UserSecretsId>
     <ApplicationIcon>bitcoin.ico</ApplicationIcon>
+    <AssemblyName>waykicoind-api</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>M:\Repos\WaykiChain.WalletServiceApi.git\src\WalletService\WalletServiceApi.xml</DocumentationFile>
+    <DocumentationFile>G:\git\WaykiChain.WalletServiceApi\src\WalletService\waykicoind-api.xml</DocumentationFile>
     <NoWarn>1701;1702;1705;1591</NoWarn>
   </PropertyGroup>
 
@@ -33,6 +34,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NBitcoin.Wicc\NBitcoin.Wicc.csproj" />
+    <ProjectReference Include="..\waykicoind-api-models\waykicoind-api-models.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1Development_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>

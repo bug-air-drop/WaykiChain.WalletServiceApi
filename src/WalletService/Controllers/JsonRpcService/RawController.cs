@@ -112,5 +112,17 @@ namespace WalletServiceApi.Controllers.JsonRpcService
 
             return await CallRpc<dynamic>(Node, new BaseRpc() { method = RpcMethod.CreateDelegateTxRaw.ToString().ToLower(), _params = paramsArr.ToArray() });
         }
+
+        /// <summary>
+        /// 解析交易RAW
+        /// </summary>
+        /// <param name="Node">节点名称, 如: testnet</param>
+        /// <param name="content">交易RAW</param>
+        /// <returns>解析结果</returns>
+        [HttpPost("{Node}/DecodeRawTx")]
+        public async Task<BaseRsp<dynamic>> DecodeRawTx(string Node, [FromBody]string content)
+        {
+            return await CallRpc<dynamic>(Node, new BaseRpc() { method = RpcMethod.DecodeRawTx.ToString().ToLower(), _params = new object[] { content } });
+        }
     }
 }
